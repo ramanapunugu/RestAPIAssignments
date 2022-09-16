@@ -1,0 +1,345 @@
+{
+	"info": {
+		"_postman_id": "6b3660ee-2bdc-440a-9f38-d044627aef2c",
+		"name": "TestLeafWeeklyAssignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23258354"
+	},
+	"item": [
+		{
+			"name": "PostRequest",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "wX%a0o4lCZ^L",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\":\"The system is completely down and no message displaying. Please help me to fix it.\",\r\n    \"short_description\":\"system is down completely\"\r\n}"
+				},
+				"url": {
+					"raw": "https://dev78768.service-now.com/api/now/table/incident",
+					"protocol": "https",
+					"host": [
+						"dev78768",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						"incident"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETREQUEST",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "wX%a0o4lCZ^L",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dev78768.service-now.com/api/now/table/incident/dd7f2ce02f821110dc8ad3f62799b616",
+					"protocol": "https",
+					"host": [
+						"dev78768",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						"incident",
+						"dd7f2ce02f821110dc8ad3f62799b616"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutRequest",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"short_description\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "wX%a0o4lCZ^L",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"short_description\":\"Issue not resolved till now. Cannot wait further\"\r\n}"
+				},
+				"url": {
+					"raw": "https://dev78768.service-now.com/api/now/table/incident/dd7f2ce02f821110dc8ad3f62799b616",
+					"protocol": "https",
+					"host": [
+						"dev78768",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						"incident",
+						"dd7f2ce02f821110dc8ad3f62799b616"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PatchRequest",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "wX%a0o4lCZ^L",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "https://dev78768.service-now.com/api/now/table/incident/dd7f2ce02f821110dc8ad3f62799b616",
+					"protocol": "https",
+					"host": [
+						"dev78768",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						"incident",
+						"dd7f2ce02f821110dc8ad3f62799b616"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteRequest",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "wX%a0o4lCZ^L",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dev78768.service-now.com/api/now/table/incident/dd7f2ce02f821110dc8ad3f62799b616",
+					"protocol": "https",
+					"host": [
+						"dev78768",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						"incident",
+						"dd7f2ce02f821110dc8ad3f62799b616"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeleteRequest",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://dev78768.service-now.com/api/now/table/incident/2aa4b0282f821110dc8ad3f62799b6f2",
+							"protocol": "https",
+							"host": [
+								"dev78768",
+								"service-now",
+								"com"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"incident",
+								"2aa4b0282f821110dc8ad3f62799b6f2"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Set-Cookie",
+							"value": "JSESSIONID=EE7BD8C0621BD4B6C48FF5EF0E229A27; Path=/; HttpOnly;Secure"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "glide_user=; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/; HttpOnly;Secure"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "glide_user_session=; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/; HttpOnly;Secure"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "glide_user_route=glide.2ecca5f16f6ee1e299b0d7a02a9736d3; Max-Age=2147483647; Expires=Wed, 04-Oct-2090 22:22:15 GMT; Path=/; HttpOnly;Secure"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "glide_session_store=0DF4BCA82F021110DC8AD3F62799B670; Max-Age=1800; Expires=Fri, 16-Sep-2022 19:38:08 GMT; Path=/; HttpOnly;Secure"
+						},
+						{
+							"key": "Server-Timing",
+							"value": "sem_wait;dur=0, sesh_wait;dur=0"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "X-Is-Logged-In",
+							"value": "true"
+						},
+						{
+							"key": "X-Transaction-ID",
+							"value": "41f4bca82f02"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Sep 2022 19:08:08 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "ServiceNow"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
